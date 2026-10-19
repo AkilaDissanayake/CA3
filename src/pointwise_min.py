@@ -1,4 +1,8 @@
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+PLOTS_DIR = Path(__file__).resolve().parent.parent / "plots"
+PLOTS_DIR.mkdir(exist_ok=True)
 import numpy as np
 
 # Define range for x (or mu)
@@ -46,5 +50,5 @@ plt.grid(True, linestyle=":", alpha=0.7)
 plt.legend(fontsize=10, loc="lower center", ncol=3)
 
 # Save and show
-plt.savefig("concave_lower_envelope_example.png", dpi=300, bbox_inches="tight")
+plt.savefig(PLOTS_DIR / "concave_lower_envelope_example.png", dpi=300, bbox_inches="tight")
 plt.show()

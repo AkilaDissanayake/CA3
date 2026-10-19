@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+PLOTS_DIR = Path(__file__).resolve().parent.parent / "plots"
+PLOTS_DIR.mkdir(exist_ok=True)
 
 def plot_primal():
     # Setup the plot
@@ -36,7 +40,7 @@ def plot_primal():
     plt.legend(loc='upper left')
     
     # Save and show
-    plt.savefig('primal_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig(PLOTS_DIR / "primal_plot.png", dpi=300, bbox_inches='tight')
     plt.show()
 
 if __name__ == "__main__":

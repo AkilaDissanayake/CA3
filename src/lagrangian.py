@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+PLOTS_DIR = Path(__file__).resolve().parent.parent / "plots"
+PLOTS_DIR.mkdir(exist_ok=True)
 
 def plot_lagrangian():
     # Define the range of x values
@@ -42,7 +46,7 @@ def plot_lagrangian():
     plt.legend()
     plt.ylim(-1, 5)
 
-    plt.savefig('lagrangian_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig(PLOTS_DIR / "lagrangian_plot.png", dpi=300, bbox_inches='tight')
     # Show the plot
     plt.show()
 

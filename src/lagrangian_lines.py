@@ -6,6 +6,10 @@ and the true dual function d(mu) = mu - mu^2/4.
 
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+PLOTS_DIR = Path(__file__).resolve().parent.parent / "plots"
+PLOTS_DIR.mkdir(exist_ok=True)
 
 # --- serif styling to match the LaTeX report -------------------------------
 plt.rcParams.update({
@@ -77,7 +81,7 @@ ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.13),
           ncol=3, frameon=False)
 
 fig.tight_layout()
-fig.savefig("lagrangian_lower_envelope.png", dpi=300, bbox_inches="tight")
+fig.savefig(PLOTS_DIR / "lagrangian_lower_envelope.png", dpi=300, bbox_inches="tight")
 print("saved lagrangian_lower_envelope.png")
 
 # --- numerical check that the envelope never dips below the true dual ------

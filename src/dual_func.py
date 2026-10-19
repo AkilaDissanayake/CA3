@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+PLOTS_DIR = Path(__file__).resolve().parent.parent / "plots"
+PLOTS_DIR.mkdir(exist_ok=True)
 
 def plot_dual():
     # Define the range of mu values (mu >= 0)
@@ -42,7 +46,7 @@ def plot_dual():
     plt.ylim(-0.5, 1.5)
     
     # Save and show
-    plt.savefig('dual_plot.png', dpi=300, bbox_inches='tight')
+    plt.savefig(PLOTS_DIR / "dual_plot.png", dpi=300, bbox_inches='tight')
     plt.show()
 
 if __name__ == "__main__":

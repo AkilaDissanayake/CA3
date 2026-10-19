@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+PLOTS_DIR = Path(__file__).resolve().parent.parent / "plots"
+PLOTS_DIR.mkdir(exist_ok=True)
 
 def plot_saddle_point():
     # Define ranges for mu and x
@@ -53,7 +57,7 @@ def plot_saddle_point():
                  xytext=(0, 12), ha='center', fontweight='bold')
 
     plt.tight_layout()
-    plt.savefig('saddle_point_plots.png', dpi=300, bbox_inches='tight')
+    plt.savefig(PLOTS_DIR / "saddle_point_plots.png", dpi=300, bbox_inches='tight')
     plt.show()
 
 if __name__ == "__main__":
